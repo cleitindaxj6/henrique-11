@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+
+:root{
+    --fonte-principal: "Kanit", sans-serif;
+    --fonte-secundaria: "Playfair Display", serif;
+    --prussian-blue: #003049ff;
+    --fire-engine-red: #d62828ff;
+    --orange-wheel: #f77f00ff;
+    --xanthous: #fcbf49ff;
+    --vanilla: #eae2b7ff;
+}
+
+body{
+    font-family: var(--fonte-principal);
+    background-color: var(--vanilla);
+}
+
+h1,h3{
+    font-family: var(--prussian-blue);
+}
