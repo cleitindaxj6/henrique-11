@@ -9,7 +9,7 @@
     --fire-engine-red: #d62828ff;
     --orange-wheel: #f77f00ff;
     --xanthous: #fcbf49ff;
-    --vanilla: #eae2b7ff;
+    --vanilla: rgb(180, 165, 83);
 }
 
 body{
