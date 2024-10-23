@@ -2,21 +2,49 @@
 
 
 
-:root{
-    --fonte-principal: "Kanit", sans-serif;
-    --fonte-secundaria: "Playfair Display", serif;
-    --prussian-blue: #003049ff;
-    --fire-engine-red: #d62828ff;
-    --orange-wheel: #f77f00ff;
-    --xanthous: #fcbf49ff;
-    --vanilla: rgb(180, 165, 83);
+body {
+    background-color: #001f3f; 
+    color: #f1f1f1; 
 }
 
-body{
-    font-family: var(--fonte-principal);
-    background-color: var(--vanilla);
+h1, h3 {
+    color: #f1c40f; 
 }
 
-h1,h3{
-    font-family: var(--prussian-blue);
+.badge {
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.btn-primary {
+    background-color: #f1c40f; 
+    border-color: #f1c40f;
+    color: #001f3f;
+}
+
+.btn-primary:hover {
+    background-color: #ffc107; 
+    border-color: #ffc107;
+}
+
+.card {
+    background-color: #fff; 
+    border: 2px solid #001f3f; 
+}
+
+.card-title {
+    color: #001f3f; 
+}
+
+footer {
+    background-color: #f1c40f; 
+    color: #001f3f; 
+}
+
+a {
+    color: #f2f2f2; 
+}
+
+a:hover {
+    color: #56471b;
 }
