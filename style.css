@@ -4,7 +4,7 @@
 
 body {
     background-color: #001f3f; 
-    color: #f1f1f1; 
+    color: #161616; 
 }
 
 h1, h3 {
@@ -28,7 +28,7 @@ h1, h3 {
 }
 
 .card {
-    background-color: #fff; 
+    background-color: #ffffff; 
     border: 2px solid #001f3f; 
 }
 
@@ -47,4 +47,64 @@ a {
 
 a:hover {
     color: #56471b;
+}
+
+/* Estilos para os modais */
+.modal-content {
+    background-color: #ffffff; /* Cor de fundo branca para o conteúdo do modal */
+    color: #001f3f; /* Cor do texto nos modais */
+}
+
+.modal-header {
+    border-bottom: 1px solid #001f3f; /* Borda inferior para o cabeçalho do modal */
+}
+
+.modal-title {
+    color: #f1c40f; /* Cor do título do modal */
+}
+
+.modal-footer {
+    border-top: 1px solid #001f3f; /* Borda superior para o rodapé do modal */
+}
+
+.modal.fade {
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+}
+
+.modal-dialog {
+    animation: slideIn 0.3s forwards;
+}
+
+.modal.fade.out .modal-dialog {
+    animation: slideOut 0.3s forwards;
 }

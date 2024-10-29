@@ -8,11 +8,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .modal.fade {
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            opacity: 1;
+        }
+
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+        }
+
+        .modal-dialog {
+            animation: slideIn 0.3s forwards;
+        }
+
+        .modal.fade.out .modal-dialog {
+            animation: slideOut 0.3s forwards;
+        }
+    </style>
 </head>
 <body class="container text-center">
 
     <header class="my-5">
-        <img class="img-thumbnail w-25 rounded-circle" src="2.jpg" alt="Carlos Henrique">
+        <img class="img-thumbnail w-25 rounded-circle" src="img/CH.jpg" alt="Carlos Henrique">
         <h1 class="mt-3">Olá, eu sou Carlos Henrique!</h1>
         <p class="lead">Aluno de Desenvolvimento de Sistemas</p>
         <p>Estudante do curso de Desenvolvimento de Sistemas, focado em Desenvolvimento Web e Mobile.</p>
@@ -30,7 +73,6 @@
     </section>
 
     <main class="d-flex flex-wrap justify-content-around mb-5">
-        <!-- Cartões de Projetos -->
         <div class="card m-3" style="width: 18rem;">
             <img src="img/Grafico.png" class="card-img-top" alt="Tratamento de Dados">
             <div class="card-body">
@@ -41,46 +83,46 @@
         </div>
 
         <div class="card m-3" style="width: 18rem;">
-            <img src="img/Flappy bird.png" class="card-img-top" alt="Novo Projeto 1">
+            <img src="img/Flappy bird.png" class="card-img-top" alt="Flappy Bird">
             <div class="card-body">
-                <h5 class="card-title">Novo Projeto 1</h5>
-                <p class="card-text">Descrição do novo projeto 1.</p>
+                <h5 class="card-title">Flappy Bird</h5>
+                <p class="card-text">Recriação do famoso jogo.</p>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">Saiba mais</button>
             </div>
         </div>
 
         <div class="card m-3" style="width: 18rem;">
-            <img src="img/Jogos Educativo.png" class="card-img-top" alt="Novo Projeto 2">
+            <img src="img/Jogos Educativo.png" class="card-img-top" alt="Jogos Educativos">
             <div class="card-body">
-                <h5 class="card-title">Novo Projeto 2</h5>
-                <p class="card-text">Descrição do novo projeto 2.</p>
+                <h5 class="card-title">Jogos Educativos</h5>
+                <p class="card-text">Plataforma de jogos interativos.</p>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">Saiba mais</button>
             </div>
         </div>
 
         <div class="card m-3" style="width: 18rem;">
-            <img src="img/Você Decidi.png" class="card-img-top" alt="Novo Projeto 3">
+            <img src="img/Você Decidi.png" class="card-img-top" alt="Você Decide">
             <div class="card-body">
-                <h5 class="card-title">Novo Projeto 3</h5>
-                <p class="card-text">Descrição do novo projeto 3.</p>
+                <h5 class="card-title">Você Decide</h5>
+                <p class="card-text">Um jogo de narrativa interativa.</p>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal4">Saiba mais</button>
             </div>
         </div>
 
         <div class="card m-3" style="width: 18rem;">
-            <img src="img/Numero Secreto.png" class="card-img-top" alt="Novo Projeto 4">
+            <img src="img/Numero Secreto.png" class="card-img-top" alt="Número Secreto">
             <div class="card-body">
-                <h5 class="card-title">Novo Projeto 4</h5>
-                <p class="card-text">Descrição do novo projeto 4.</p>
+                <h5 class="card-title">Número Secreto</h5>
+                <p class="card-text">Adivinhe o número secreto.</p>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal5">Saiba mais</button>
             </div>
         </div>
 
         <div class="card m-3" style="width: 18rem;">
-            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Novo Projeto 5">
+            <img src="img/Sabor Express.png" class="card-img-top" alt="Sabor Express">
             <div class="card-body">
-                <h5 class="card-title">Novo Projeto 5</h5>
-                <p class="card-text">Descrição do novo projeto 5.</p>
+                <h5 class="card-title">Sabor Express</h5>
+                <p class="card-text">Desafios culinários programáticos.</p>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal6">Saiba mais</button>
             </div>
         </div>
@@ -95,9 +137,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Este projeto visa a manipulação e análise de dados utilizando bibliotecas como Pandas e Matplotlib. Através da visualização gráfica, é possível entender tendências e padrões em conjuntos de dados complexos, permitindo tomadas de decisão mais informadas.
+                    <img src="img/Grafico.png" class="img-fluid mb-3" alt="Tratamento de Dados">
+                    Neste projeto, utilizamos Python e bibliotecas como Pandas e Matplotlib para realizar a manipulação e visualização de dados. Através de gráficos interativos, conseguimos analisar grandes volumes de informações, identificar tendências e tomar decisões mais informadas.
                 </div>
                 <div class="modal-footer">
+                    <a href="https://link-do-seu-site.com" class="btn btn-primary" target="_blank">Visitar Site</a>
+                    <a href="https://github.com/seu-repositorio" class="btn btn-secondary" target="_blank">Ver no GitHub</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 </div>
             </div>
@@ -108,13 +153,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal2Label">Novo Projeto 1: Flappy Bird</h5>
+                    <h5 class="modal-title" id="modal2Label">Flappy Bird</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Inspirado no famoso jogo Flappy Bird, este projeto é uma implementação em JavaScript que utiliza HTML5 e Canvas. O objetivo é criar uma experiência divertida e desafiadora, onde o jogador deve controlar um pássaro que precisa desviar de obstáculos enquanto coleta pontos.
+                    <img src="img/Flappy bird.png" class="img-fluid mb-3" alt="Flappy Bird">
+                    Este projeto é uma recriação do famoso jogo Flappy Bird, desenvolvido com HTML5 e JavaScript. O jogador controla um pássaro que precisa voar entre canos, evitando colisões.
                 </div>
                 <div class="modal-footer">
+                    <a href="https://link-do-seu-site.com" class="btn btn-primary" target="_blank">Visitar Site</a>
+                    <a href="https://github.com/seu-repositorio" class="btn btn-secondary" target="_blank">Ver no GitHub</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 </div>
             </div>
@@ -125,13 +173,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal3Label">Novo Projeto 2: Jogos Educativos</h5>
+                    <h5 class="modal-title" id="modal3Label">Jogos Educativos</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Este projeto é uma plataforma de jogos educativos desenvolvida para facilitar o aprendizado de crianças. Com jogos interativos que abordam matemática, ciências e habilidades linguísticas, buscamos tornar o aprendizado mais lúdico e envolvente.
+                    <img src="img/Jogos Educativo.png" class="img-fluid mb-3" alt="Jogos Educativos">
+                    Este projeto consiste em uma plataforma de jogos educativos voltada para o aprendizado interativo. Utilizamos HTML, CSS e JavaScript para criar experiências envolventes para os usuários.
                 </div>
                 <div class="modal-footer">
+                    <a href="https://link-do-seu-site.com" class="btn btn-primary" target="_blank">Visitar Site</a>
+                    <a href="https://github.com/seu-repositorio" class="btn btn-secondary" target="_blank">Ver no GitHub</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 </div>
             </div>
@@ -142,13 +193,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal4Label">Novo Projeto 3: Você Decide</h5>
+                    <h5 class="modal-title" id="modal4Label">Você Decide</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    "Você Decide" é um jogo de narrativa interativa que permite aos usuários fazer escolhas que impactam o desenrolar da história. Com múltiplos finais, este projeto explora conceitos de desenvolvimento de histórias e interatividade, incentivando a criatividade dos jogadores.
+                    <img src="img/Você Decidi.png" class="img-fluid mb-3" alt="Você Decide">
+                    Um jogo de narrativa onde suas escolhas afetam o resultado da história. Desenvolvido com HTML e JavaScript, proporcionando uma experiência única a cada jogada.
                 </div>
                 <div class="modal-footer">
+                    <a href="https://link-do-seu-site.com" class="btn btn-primary" target="_blank">Visitar Site</a>
+                    <a href="https://github.com/seu-repositorio" class="btn btn-secondary" target="_blank">Ver no GitHub</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 </div>
             </div>
@@ -159,13 +213,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal5Label">Novo Projeto 4: Número Secreto</h5>
+                    <h5 class="modal-title" id="modal5Label">Número Secreto</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Neste jogo, o usuário deve adivinhar um número secreto gerado aleatoriamente pelo sistema. Com dicas fornecidas após cada palpite, o jogador é desafiado a descobrir o número com o menor número de tentativas possível. É uma ótima maneira de praticar lógica e raciocínio.
+                    <img src="img/Numero Secreto.png" class="img-fluid mb-3" alt="Número Secreto">
+                    Um simples jogo onde o jogador deve adivinhar um número secreto gerado aleatoriamente. Criado com HTML e JavaScript, é uma ótima maneira de praticar lógica e programação.
                 </div>
                 <div class="modal-footer">
+                    <a href="https://link-do-seu-site.com" class="btn btn-primary" target="_blank">Visitar Site</a>
+                    <a href="https://github.com/seu-repositorio" class="btn btn-secondary" target="_blank">Ver no GitHub</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 </div>
             </div>
@@ -176,13 +233,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal6Label">Novo Projeto 5: Explorando Conceitos</h5>
+                    <h5 class="modal-title" id="modal6Label">Sabor Express</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Este projeto tem como objetivo explorar conceitos fundamentais da programação através de pequenos desafios e exercícios. Ele é voltado para iniciantes e busca introduzir temas como variáveis, loops e funções de maneira prática e acessível.
+                    <img src="img/Sabor Express.png" class="img-fluid mb-3" alt="Sabor Express">
+                    Um jogo culinário onde o usuário deve preparar pratos de forma rápida e eficiente. Utilizando HTML, CSS e JavaScript, traz uma dinâmica divertida ao aprendizado de programação.
                 </div>
                 <div class="modal-footer">
+                    <a href="https://link-do-seu-site.com" class="btn btn-primary" target="_blank">Visitar Site</a>
+                    <a href="https://github.com/seu-repositorio" class="btn btn-secondary" target="_blank">Ver no GitHub</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 </div>
             </div>
@@ -201,5 +261,18 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var modals = document.querySelectorAll('.modal');
+
+        modals.forEach(modal => {
+            modal.addEventListener('show.bs.modal', function () {
+                modal.classList.remove('out');
+            });
+
+            modal.addEventListener('hide.bs.modal', function () {
+                modal.classList.add('out');
+            });
+        });
+    </script>
 </body>
 </html>
