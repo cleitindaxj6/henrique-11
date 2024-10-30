@@ -4,7 +4,7 @@
 
 body {
     background-color: #001f3f; 
-    color: #161616; 
+    color: #f1d500; 
 }
 
 h1, h3 {
@@ -23,7 +23,7 @@ h1, h3 {
 }
 
 .btn-primary:hover {
-    background-color: #ffc107; 
+    background-color: #827345; 
     border-color: #ffc107;
 }
 
@@ -49,22 +49,22 @@ a:hover {
     color: #56471b;
 }
 
-/* Estilos para os modais */
+
 .modal-content {
-    background-color: #ffffff; /* Cor de fundo branca para o conteúdo do modal */
-    color: #001f3f; /* Cor do texto nos modais */
+    background-color: #ffffff; 
+    color: #001f3f;
 }
 
 .modal-header {
-    border-bottom: 1px solid #001f3f; /* Borda inferior para o cabeçalho do modal */
+    border-bottom: 1px solid #001f3f; 
 }
 
 .modal-title {
-    color: #f1c40f; /* Cor do título do modal */
+    color: #f1c40f; 
 }
 
 .modal-footer {
-    border-top: 1px solid #001f3f; /* Borda superior para o rodapé do modal */
+    border-top: 1px solid #001f3f; 
 }
 
 .modal.fade {
@@ -76,7 +76,7 @@ a:hover {
 }
 
 .modal-backdrop {
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro */
+    background-color: rgba(184, 179, 179, 0.7); 
 }
 
 @keyframes slideIn {
